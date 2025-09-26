@@ -1,14 +1,14 @@
 package com.mzerek.springbootsolutions.dto;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@RequiredArgsConstructor
-@Getter
-@Setter
-public class PersonDto {
+import java.io.Serializable;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+public class PersonDto implements Serializable {
     private Long id;
     private String username;
 }
