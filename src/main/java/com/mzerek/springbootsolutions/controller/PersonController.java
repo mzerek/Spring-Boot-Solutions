@@ -1,11 +1,14 @@
 package com.mzerek.springbootsolutions.controller;
 
+import com.mzerek.springbootsolutions.dto.PersonDto;
 import com.mzerek.springbootsolutions.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -15,8 +18,8 @@ public class PersonController {
     private final PersonService personService;
 
     @GetMapping("/persons")
-    public void persons() {
-        personService.getPersons();
+    public List<PersonDto> persons() {
+        return personService.getPersons();
     }
 
     @GetMapping("/persons/{id}")
