@@ -46,6 +46,9 @@ dependencies {
 
 	implementation 'org.ehcache:ehcache:3.11.1:jakarta'
 	implementation 'javax.cache:cache-api:1.1.1'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'redis.clients:jedis'
 }
 
 tasks.named('test') {

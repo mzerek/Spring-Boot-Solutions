@@ -6,3 +6,7 @@ Mzerek Spring Boot Solutions:
 5. OpenAPI and Swagger
 6. Liquibase configuration
 7. Mapstruct mapper configuration
+8. Redis -> Redis_Insight - https://redis.io/downloads/#Redis_Insight
+   https://redis.io/docs/latest/operate/oss_and_stack/install/install-stack/docker/
+   https://www.baeldung.com/spring-data-redis-tutorial
+9. Docker compose for PostgreSQL and Redis

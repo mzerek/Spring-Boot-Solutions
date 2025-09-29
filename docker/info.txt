@@ -1,0 +1,13 @@
+1. PostgreSQL
+docker run -itd -e POSTGRES_USER=test -e POSTGRES_PASSWORD=test -p 5432:5432 --name postgresql postgres
+docker run -itd -e POSTGRES_USER=test -e POSTGRES_PASSWORD=test -p 5432:5432 -v ./data:/var/lib/postgresql/data --name postgresql postgres
+
+2. Redis
+docker run -d --name redis -p 6379:6379 redis
+docker exec -it redis redis-cli
+
+3. Docker compose:
+docker compose -f docker-compose.yml up -d
+
+4. Remove (hard) containers:
+docker rm $(docker ps -a -q) --force
