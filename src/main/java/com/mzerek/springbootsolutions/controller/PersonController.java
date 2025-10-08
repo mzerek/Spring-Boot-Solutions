@@ -1,10 +1,12 @@
 package com.mzerek.springbootsolutions.controller;
 
 import com.mzerek.springbootsolutions.dto.PersonDto;
+import com.mzerek.springbootsolutions.model.Person;
 import com.mzerek.springbootsolutions.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -37,5 +39,11 @@ public class PersonController {
     @GetMapping("/clear-cache")
     public void clearCacheGetPersons() {
         personService.clearCacheGetPersons();
+    }
+
+    //Sql injection if searchTerm= "' OR '1'='1' --"
+    @GetMapping("/persons-native/{searchTerm}")
+    public List<PersonDto> persons(@PathVariable("searchTerm") String searchTerm) throws SQLException {
+        return personService.getPersonsNative(searchTerm);
     }
 }

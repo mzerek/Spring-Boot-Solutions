@@ -6,6 +6,7 @@ import com.mzerek.springbootsolutions.dto.PersonMapper;
 import com.mzerek.springbootsolutions.model.Person;
 import com.mzerek.springbootsolutions.repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class PersonService {
@@ -51,5 +53,13 @@ public class PersonService {
     @CacheEvict(cacheNames = "GetPersons")
     public void clearCacheGetPersons() {
 
+    }
+
+    public List<PersonDto> getPersonsNative(String searchParam) {
+        log.info("Search param: " + searchParam);
+        List<Person> persons = personRepository.findAllPersonCustomNative(searchParam);
+        return persons.stream()
+                .map(personMapper::personToPersonDto)
+                .toList();
     }
 }
