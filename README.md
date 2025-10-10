@@ -10,3 +10,7 @@ Mzerek Spring Boot Solutions:
    https://redis.io/docs/latest/operate/oss_and_stack/install/install-stack/docker/
    https://www.baeldung.com/spring-data-redis-tutorial
 9. Docker compose for PostgreSQL and Redis
+10. Micrometer 
+    https://medium.com/javarevisited/unlocking-precision-metrics-in-spring-boot-with-micrometer-a-comprehensive-guide-6d72d6eaaf00
+    https://medium.com/@AlexanderObregon/implementing-custom-metrics-with-micrometer-in-spring-boot-155641d57a20
+11. 
